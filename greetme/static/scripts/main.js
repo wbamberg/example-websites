@@ -14,6 +14,8 @@ greetme.addEventListener("click", function() {
 
 var user = document.getElementById('user');
 user.addEventListener("focus", function() {
+  var user = document.getElementById('user');
+  user.value = "";
   var welcome = document.getElementById('welcome');
   welcome.textContent = "";
 }, false);
