@@ -23,6 +23,15 @@
  * @author fraser@google.com (Neil Fraser)
  */
 
+
+var dmp = new diff_match_patch();
+
+function diff(text1, text2) {
+  var d = dmp.diff_main(text1, text2);
+  dmp.diff_cleanupSemantic(d);
+  return dmp.diff_prettyHtml(d);
+}
+
 /**
  * Class containing the diff, match and patch methods.
  * @constructor
