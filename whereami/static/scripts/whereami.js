@@ -51,3 +51,5 @@ whereami.onclick = function() {
 window.addEventListener("resize", function() {
   getMap();
 }, false);
+
+whereami.click();
