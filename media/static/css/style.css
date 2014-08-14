@@ -1,0 +1,45 @@
+
+#toc {
+  width: 225px;
+  float: right;
+  border: 1px solid black;
+  padding-left: 1em;
+  margin-left: 1em;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+#toc ol {
+  padding-left: 1.5em;
+}
+
+#content {
+  margin-right: 225px;
+  -moz-column-count: 3;
+  -moz-column-gap: 20px;
+}
+
+#content p {
+  margin-top: 0;
+}
+
+.clear
+{
+  clear: both;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1200px) {
+  #content {
+    -moz-column-count: 2;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #content {
+    -moz-column-count: 1;
+    margin-right: 0;
+  }
+  #toc {
+    display: none;
+  }
+}
