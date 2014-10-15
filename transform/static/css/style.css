@@ -1,0 +1,14 @@
+
+.box-transform {
+  height: 30%;
+  width: 15%;
+  margin-top: 10%;
+  margin-left: 10%;
+  padding: 2%;
+  border: 1px solid black;
+}
+
+
+.box-transform {
+  transform: translate(300%) rotate(45deg) skewx(45deg);
+}

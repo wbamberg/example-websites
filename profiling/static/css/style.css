@@ -1,0 +1,24 @@
+
+body{
+background-color: rgb(0, 150, 221);
+}
+
+#welcome {
+color: white;
+margin: 5px;
+margin-top:10px;
+
+font-family: sans-serif;
+}
+
+.box {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 1px solid green;
+}
+
+.bigbox {
+  height: 300px;
+  width: 300px;
+}
