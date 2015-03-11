@@ -12,11 +12,11 @@
   padding: 2%;
 }
 
-.use-transform {
+.use-transform.started > .moving-box {
   animation-name: use-transform;
 }
 
-.use-margin {
+.use-margin.started > .moving-box  {
   animation-name: use-margin;
 }
 

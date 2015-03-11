@@ -1,33 +1,38 @@
-var radioGroup = document.getElementById("radio-group");
-radioGroup.addEventListener("click", updateTransitionMethod, true);
 
-var use = "use-margin";
-var dontUse = "use-transform";
+var radioGroup = document.getElementById("radio-group");
+var useMargin = document.getElementById("use-margin");
+var useTransform = document.getElementById("use-transform");
+var container = document.getElementById("container");
+var startStopButton = document.getElementById("start-stop");
+
+radioGroup.addEventListener("click", updateTransitionMethod, false);
+startStopButton.addEventListener("click", startStop, false);
 
 updateTransitionMethod();
 
 function updateTransitionMethod() {
-  var useMargin = document.getElementById("use-margin");
-  var useTransform = document.getElementById("use-transform");
-
   if (useMargin.checked) {
-    use = "use-margin";
-    dontUse = "use-transform";
+    container.classList.remove("use-transform");
+    container.classList.add("use-margin");
   }
 
   else if (useTransform.checked) {
-    use = "use-transform";
-    dontUse = "use-margin";
+    container.classList.add("use-transform");
+    container.classList.remove("use-margin");
   }
 
-  updateClasses();
 }
 
-function updateClasses() {
-  var boxes = document.getElementsByClassName("moving-box");
-  for (var i = 0; i < boxes.length; i++) {
-    var box = boxes[i];
-    box.classList.remove(dontUse);
-    box.classList.add(use);
+var started = false;
+
+function startStop() {
+  started = !started;
+  if (started) {
+    container.classList.add("started");
+    startStopButton.value = "Stop";
+  }
+  else {
+   container.classList.remove("started");
+   startStopButton.value = "Start";
   }
 }
