@@ -4,6 +4,7 @@ var useWorker = false;
 var primes = [];
 var pointlessComputationsButton = document.getElementById("pointless-computations");
 var worker = new Worker("static/scripts/calculate.js");
+var startStopButton = document.getElementById("start-stop");
 
 /*
  * main
@@ -24,6 +25,7 @@ function initialize() {
   pointlessComputationsButton.disabled = false;
   pointlessComputationsButton.addEventListener("click", doPointlessComputations, false);
 
+  startStopButton.addEventListener("click", startStop, false);
 }
 
 initialize();
@@ -77,5 +79,23 @@ function doPointlessComputations() {
   }
   else {
     doPointlessComputationsInWorker();
+  }
+}
+
+/*
+start/stop animation
+*/
+
+var started = false;
+
+function startStop() {
+  started = !started;
+  if (started) {
+    container.classList.add("started");
+    startStopButton.value = "Stop animations";
+  }
+  else {
+   container.classList.remove("started");
+   startStopButton.value = "Start animations";
   }
 }
