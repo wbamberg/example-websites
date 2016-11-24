@@ -30,7 +30,7 @@ var textArea2;
 var launchButton = document.getElementById("launch");
 launchButton.addEventListener("click", launch, false);
 
-textArea1 = document.getElementById("txt1");
+textArea1 = document.getElementById("text1");
 textArea2 = document.getElementById("text2");
 
 function launch() {
